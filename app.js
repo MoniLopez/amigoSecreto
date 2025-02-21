@@ -11,8 +11,8 @@ if (nombre == ""){//Valida entrada, que no esté vacío
 else{
     amigos.push(nombre);//Agrega valor al array
     nombreInput.value = ''; //Limpia campo de entrada con cadena vacía
+    actualizarLista();
 }
-
 }
 
 function sortearAmigo(){
@@ -25,4 +25,11 @@ if (amigos.length != 0){
 }else{
     alert("No hay amigos para sortear");
 }
+}
+
+function actualizarLista(){
+    let lista = document.getElementById("listaAmigos");
+    for (i = 0; i<amigos.length; i++){
+        lista.innerHTML = amigos[i];
+    }
 }
